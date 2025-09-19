@@ -1,18 +1,26 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include "../lib/VolumeKnob/VolumeKnob.h"
+
+#define BTN_PIN 25
+#define CLKW_PIN 32
+#define CCLKW_PIN 33
+
+int lastVolume = 0;
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+
+  KnobPinSetup(BTN_PIN, CLKW_PIN, CCLKW_PIN);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-}
+  KnobListener();
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  if (volume != lastVolume) {
+    Serial.println(volume);
+    lastVolume = volume;
+  }
 }
