@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "../lib/VolumeKnob/VolumeKnob.h"
+using VolumeKnob::KnobPinSetup, VolumeKnob::KnobListener;
 
 #define BTN_PIN 25
 #define CLKW_PIN 32
@@ -19,8 +20,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   KnobListener();
 
-  if (volume != lastVolume) {
-    Serial.println(volume);
-    lastVolume = volume;
+  if (VolumeKnob::volume != lastVolume) {
+    Serial.println(VolumeKnob::volume);
+    lastVolume = VolumeKnob::volume;
   }
 }
