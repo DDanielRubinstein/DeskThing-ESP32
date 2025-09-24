@@ -1,6 +1,6 @@
 # DeskThing
 
-A take on Spotify's CarThing, made as much as possible from scratch.
+A take on Spotify's CarThing, made as much from scratch as possible.
 
 This project is WIP, meaning this README will be updated accordingly as we progress.
 
