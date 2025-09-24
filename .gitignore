@@ -4,6 +4,6 @@
 .vscode/launch.json
 .vscode/ipch
 .vscode
-lib/env.h
+lib/Env/env.cpp
 lib/AuthServer/cert.h
 lib/AuthServer/private_key.h

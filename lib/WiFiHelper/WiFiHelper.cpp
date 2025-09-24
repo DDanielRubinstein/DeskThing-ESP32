@@ -1,6 +1,6 @@
 #include <WiFiClientSecure.h>
 
-#include <../lib/env.h>
+#include "../Env/env.h"
 
 namespace WiFiHelper {
     void connect() {
@@ -8,10 +8,10 @@ namespace WiFiHelper {
         WiFi.mode(WIFI_STA);
     
         // attemp connection using credentials
-        WiFi.begin(env::ssid, env::pass);
+        WiFi.begin(env::ssid.c_str(), env::pass.c_str());
         
         Serial.print("Connecting to ");
-        Serial.print(env::ssid);
+        Serial.print(env::ssid.c_str());
         Serial.print("\n");
         
         while(WiFi.status() != WL_CONNECTED) {
