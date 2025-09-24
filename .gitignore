@@ -3,3 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+.vscode
+lib/env.h
+lib/AuthServer/cert.h
+lib/AuthServer/private_key.h

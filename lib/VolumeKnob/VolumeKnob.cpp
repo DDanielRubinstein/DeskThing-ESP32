@@ -10,7 +10,7 @@ namespace VolumeKnob {
     int volume = 0;
     bool mute = false;
 
-    void KnobPinSetup(int _btn_pin, int _clkw_pin, int _cclkw_pin) {
+    void pinSetup(const int& _btn_pin, const int& _clkw_pin, const int& _cclkw_pin) {
         btn_pin = _btn_pin, clkw_pin = _clkw_pin, cclkw_pin = _cclkw_pin;
     
         // set pins to input
@@ -21,7 +21,7 @@ namespace VolumeKnob {
         last_clkw_state = digitalRead(clkw_pin);
     }
     
-    void KnobListener() {
+    void listener() {
         if (!btn_pin || !clkw_pin || !cclkw_pin) {
             Serial.println("Pin values have not been set.");
             return;
@@ -39,8 +39,6 @@ namespace VolumeKnob {
             
             // increment counter if knob was turned clkw, decrement otherwise
             volume += (cur_clkw_state != cur_cclkw_state) ? (volume < 100) : -1*(volume > 0);
-            
-            // Serial.printf("Volume: %d\n", volume);
         }
     
         last_clkw_state = cur_clkw_state;

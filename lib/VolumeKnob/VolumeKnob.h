@@ -2,7 +2,7 @@ namespace VolumeKnob {
     extern int volume;
     extern bool mute;
     
-    void KnobPinSetup(int btn_pin, int clkw_pin, int cclkw_pin);
+    void pinSetup(const int& btn_pin, const int& clkw_pin, const int& cclkw_pin);
     
-    void KnobListener();
+    void listener();
 }
